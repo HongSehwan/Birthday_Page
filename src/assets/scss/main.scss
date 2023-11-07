@@ -1,11 +1,12 @@
 .main-page {
     width: 100%;
-    height: 106vh; 
+    height: 100vh; 
     background-image: url("../images//main_background.jpeg");
+    overflow: hidden;
 }
 
 .route-container {
-    width: 100%;
+    width: 100%; 
     margin-left: 0;
 }
 
@@ -17,6 +18,12 @@
     cursor: pointer;
 }
 
+.sideArea {
+    position: absolute;
+    right: 1px;
+    background-image: url("../images/gift-background.gif");
+}
+
 .music-container {
     width: 100%;
     justify-content: flex-end;
@@ -24,11 +31,129 @@
 
     .music-box {
         width: 17.5rem;
-        height: 47vh;
+        height: 65.5vh;
         border: 1px solid #f8a5c2;
         border-radius: 5px;
         margin-right: 10px;
         box-shadow: 10px 10px 10px 10px #f8a5c2;
+        overflow-x: hidden; 
+        overflow-y: hidden;
+        background-image: url("../images/heart_background.jpg");
+        background-repeat: no-repeat;
+        background-size: 300px;
+
+        .listName {
+            margin-top: 9px;
+            height: 261px;
+        }
+
+        .pendingTrack {
+            display: flex;
+            margin-top: 10px;
+            margin-left: 10px;
+            height: 30px;
+            align-items: center;
+
+            .playList {
+                list-style: none;
+                font-size: 15px;
+                font-weight: 550;
+                // margin-top: 4px;
+                margin-left: 15px;
+                color: #000;
+            }
+
+            & .trackIMG {
+                width: 30px;
+                height: 30px;
+                object-fit: fill;
+            }
+        }
+
+        @keyframes marquee {
+            from {transform: translateX(0);}
+            to {transform: translateX(-100%);}
+        }
+        
+        @keyframes marquee-r {
+            from {transform: translateX(-102.3%);}
+            to {transform: translateX(0);}
+        }
+        
+        @keyframes rollCage {
+            from {transform: rotate(0);}
+            to {transform: rotate(5turn);}
+        }
+
+        .marquee {
+            font-size: 15px;
+            font-weight: 500;
+            margin-top: 4px;
+            // height: calc(170px + 4rem);
+            height: 20px;
+            overflow: hidden;
+            position: relative;
+            width: 100vw;
+            height: 30px;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+        
+        .track {
+            overflow: hidden;
+            // padding: 2rem 0;
+            position: absolute;
+            transition: background-color 300ms ease, color 300ms ease;
+            white-space: nowrap;
+
+            & .trackIMG {
+                width: 30px;
+                height: 30px;
+                object-fit: fill;
+            }
+            
+            & .text {
+                animation: marquee 50000ms linear infinite;
+                align-items: center;
+                display: inline-flex;
+                will-change: transform;
+                color: #000;
+                
+                &.-r {
+                    animation-name: marquee-r;
+                    margin-left: 18px;
+                }
+                
+                &.-twox {
+                    animation-duration: 25000ms;
+                }
+            }
+        }
+
+        .-green {
+            margin-left: 170px;
+            margin-right: 170px;
+        }
+        
+
+        // .activeList {
+        //     list-style: none;
+        //     font-size: 15px;
+        //     font-weight: 500;
+        //     margin-top: 4px;
+        //     margin-left: 15px;
+        //     animation: marquee 30s linear infinite;   
+        // }
+
+        // @keyframes marquee {
+        //     from { transform: translateX(0%); }
+        //     to { transform: translateX(100%); }
+        // }
+
+        // @media (hover: hover) and (min-width: 700px){
+        //     .animated-title .content {-webkit-transform: translateY(calc(100% - 8rem)); transform: translateY(calc(100% - 8rem));}
+        // }
+            
 
         .audio-container {
             width: 17.4rem !important;
@@ -36,10 +161,11 @@
             audio {
                 // height: auto !important;
                 border: 1px solid #f8a5c2;
-                margin-top: 279px;
+                // margin-top: 279px;
+                margin-top: 140px;
                 border-bottom-left-radius: 5px;
                 border-bottom-right-radius: 5px;
-                opacity: 50%;
+                opacity: 80%;
                 height: 50px !important;
                 width: 100%;
                 background: #f5f6fa;
@@ -60,16 +186,19 @@
 
 .gift-container {
     width: 100%;
+    height: 27vh;
     justify-content: flex-end;
     display: flex;
+    overflow: hidden;
 
     .gift-box {
         width: 17.5rem;
-        height: 50vh;
+        display: flex;
         // border: 1px solid #000;
         border-radius: 5px;
         margin-right: 10px;
         margin-top: 15px;
+        justify-content: center;
     }
 }
 
@@ -82,7 +211,7 @@ main {
   
     .container {
         width: 100%; 
-        height: 100vh; 
+        height: 94.3vh; 
         overflow: hidden;
         margin: 0px auto; 
         position: absolute;
@@ -108,7 +237,7 @@ main {
     .slider-container {
         width: 100%;
         height: 205px;
-        bottom: 5px;
+        bottom: -13px;
         position: absolute;
         // box-shadow: 40px 10px 30px 10px #000;
         box-shadow: 40px 50px 30px 10px #000;
@@ -117,6 +246,7 @@ main {
             border: none !important;
             background: none !important;
             box-shadow: 0 0 0;
+            margin-bottom: 0 !important;
         }
     }
 

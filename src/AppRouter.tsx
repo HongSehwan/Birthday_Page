@@ -19,8 +19,10 @@ const AppRouter = () => {
                             <Route path="/letter/*" element={<Letter />} />
                             <Route path="/" element={<Navigate replace to="/main" />} />
                         </Routes>
-                        <Musicbox />
-                        <Gift />
+                        <div className="sideArea">
+                            <Musicbox />
+                            <Gift />
+                        </div>
                     </Row>
                 </div>
             </BrowserRouter>

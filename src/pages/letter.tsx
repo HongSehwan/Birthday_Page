@@ -1,11 +1,7 @@
 import React from "react";
 
 const Letter = () => {
-    return (
-        <div>
-            <p>Letter</p>
-        </div>
-    );
+    return <div></div>;
 };
 
 export default Letter;
