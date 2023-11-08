@@ -1,19 +1,77 @@
+body{
+    width: 100%;
+    height: 425vh; 
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.modal-content {
+    // background: linear-gradient(45deg, Violet, Orange);
+    background:url("../images/gift_giving.jpeg");
+    background-repeat: no-repeat;
+    background-size: 870px;
+    object-fit: fill;
+    width: 100%;
+    height: 500px;
+}
+
+.contained-modal-title-vcenter {
+    background: linear-gradient(to right top, #f354cb, #6ea3e1) !important;
+    color: transparent !important;
+    -webkit-background-clip: text !important;
+}
+
+.gift-giving {
+    width: 300px !important;
+    height: 300px !important;
+}
+
+.gift-voucher {
+    width: 150px !important;
+    height: 300px !important;
+}
+
 .main-page {
     width: 100%;
-    height: 100vh; 
-    background-image: url("../images//main_background.jpeg");
-    overflow: hidden;
+    height: 425vh; 
+    background-image: url("../images/main_background.jpeg");
+    overflow-y: auto;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+        
+    &::-webkit-scrollbar {
+        display: none; /* Chrome, Safari and Opera */
+    }
 }
 
 .route-container {
     width: 100%; 
     margin-left: 0;
+    position: fixed;
 }
+
+.nav-wrapper {
+    z-index: 1155;
+    align-items: center;
+}
+
+.nav-link {
+    color: #636e72;
+    font-weight: 600;
+    text-decoration: none;
+    &:hover { 
+        color: black;
+    }
+}
+
 
 .cat-logo {
     width: 30px;
     height: 30px;
-    margin-left: 28px;
+    margin-left: 30px;
     margin-top: 5px;
     cursor: pointer;
 }
@@ -25,9 +83,12 @@
 }
 
 .music-container {
+    position: relative;
     width: 100%;
+    margin-top: 40px;
     justify-content: flex-end;
     display: flex;
+    z-index: 1155;
 
     .music-box {
         width: 17.5rem;
@@ -40,7 +101,7 @@
         overflow-y: hidden;
         background-image: url("../images/heart_background.jpg");
         background-repeat: no-repeat;
-        background-size: 300px;
+        background-size: 305px;
 
         .listName {
             margin-top: 9px;
@@ -156,8 +217,9 @@
             
 
         .audio-container {
-            width: 17.4rem !important;
+            width: 100% !important;
             padding-bottom: 45px;
+            max-height: 95px;
             audio {
                 // height: auto !important;
                 border: 1px solid #f8a5c2;
@@ -166,8 +228,6 @@
                 border-bottom-left-radius: 5px;
                 border-bottom-right-radius: 5px;
                 opacity: 80%;
-                height: 50px !important;
-                width: 100%;
                 background: #f5f6fa;
                 box-shadow: 0 0 20px 0 #000a;
             
@@ -184,23 +244,23 @@
 }
 
 
-.gift-container {
-    width: 100%;
-    height: 27vh;
-    justify-content: flex-end;
-    display: flex;
-    overflow: hidden;
-
-    .gift-box {
-        width: 17.5rem;
-        display: flex;
-        // border: 1px solid #000;
-        border-radius: 5px;
-        margin-right: 10px;
-        margin-top: 15px;
-        justify-content: center;
-    }
-}
+// .gift-container {
+//     width: 100%;
+//     height: 27vh;
+//     justify-content: flex-end;
+//     display: flex;
+    
+//     .gift-box {
+//         width: 17.5rem;
+//         display: flex;
+//         // position: fixed;
+//         // border: 1px solid #000;
+//         border-radius: 5px;
+//         margin-right: 10px;
+//         margin-top: 15px;
+//         justify-content: center;
+//     }
+// }
 
 main {
     width: 100%;
@@ -294,3 +354,161 @@ main {
     //     }
     //   }
   }
+
+  
+
+  @media screen and (max-width:1024px) {
+    main {
+        .container {
+            width: 65%;
+        }   
+    }
+
+    .sideArea {
+        height: 100vh;
+        .music-container {
+            .music-box {
+                height: 100%;
+                .listName {
+                    margin-top: 0;
+                }
+                .audio-container {
+                    padding-bottom: 0;
+                    audio {
+                        margin-top: 150px;
+                    }
+                }
+            }
+        }
+    }
+  }
+
+  @media screen and (max-width:767px) {
+    main {
+        .container {
+            display: none;
+        }
+    }
+
+    .sideArea {
+        .music-container {
+            width: 100vw;
+            height: 100vh;
+            justify-content: center;
+            padding-top: 30px;
+            display: flex;
+            .music-box {
+                height: 80%;
+                background-size: 53vh;
+                
+                .listName {
+                    margin-top: 0;
+                    height: 90%;
+                }
+        
+                .pendingTrack {
+                    margin-top: 25px;
+                    height: 2.5vh;
+
+                    .playList {
+                        font-size: 4vw;
+                    }
+                }
+
+                .marquee {
+                    font-size: 4vw;
+                }
+
+                .audio-container {
+                    padding-bottom: 45px;
+                    display: flex;
+                    align-items: flex-end;
+                }
+            }
+        }
+    }
+  }
+
+  @media screen and (max-width:380px) {
+    .sideArea {
+        .music-container {
+            .music-box {
+                .listName {
+                    height: 87%;
+                }
+            }
+        }
+    }
+  }
+
+  @media screen and (min-width:1500px) {
+    main {
+        .container {
+            max-width: 75vw;
+        }
+
+        .five-items {
+            li img {
+                width: 300px;
+            }
+        }
+    }
+    .cat-logo {
+        width: 50px;
+        height: 50px;
+        margin-left: 30px;
+        margin-bottom: 5px;
+    }
+
+    .nav-link { 
+        font-size: 20px;
+    }
+
+    .sideArea {
+        margin-top: 20px;
+        right: 11px;
+        .music-container {
+            width: 29rem;
+            .music-box {
+                width: 25rem;
+                background-size: 400px;
+        
+                .listName {
+                    margin-top: 9px;
+                    height: 261px;
+                }
+        
+                .pendingTrack {
+                    margin-top: 20px;
+                    margin-left: 15px;
+                    height: 30px;
+        
+                    .playList {
+                        font-size: 18px;
+                        font-weight: 600;
+                        margin-left: 20px;
+                    }
+        
+                    & .trackIMG {
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+        
+                .marquee {
+                    font-size: 18px;
+                    font-weight: 550;
+                    margin-top: 0;
+                }
+        
+                .audio-container {
+                    max-height: 105px;
+                    audio {
+                        margin-top: 235px;
+                    }
+                }
+            }
+        }
+    }
+}
+  

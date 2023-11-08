@@ -18,7 +18,7 @@ const Musicbox = () => {
             } else if (playIndex >= 9 && playIndex <= 18) {
                 setPlayListName(playName.slice(10, 20));
             } else {
-                setPlayListName(playName.slice(20, 29));
+                setPlayListName(playName.slice(20, 30));
             }
             setPlayIndex(playIndex + 1);
         }

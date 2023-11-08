@@ -36,6 +36,7 @@ const Main = () => {
     }, []);
 
     const [playIndex, setPlayIndex] = useState(0);
+
     const playList = [
         { index: 1, url: "/video/birthday.mp4" },
         { index: 2, url: "/video/painting.mp4" },
@@ -56,7 +57,7 @@ const Main = () => {
     return (
         <>
             <main>
-                <div className="container">
+                <div className="container no-scroll">
                     <ReactPlayer
                         className="video-container"
                         url={playList[playIndex].url} // 플레이어 url
@@ -66,10 +67,42 @@ const Main = () => {
                         pip={true}
                         onEnded={() => handleNextVideo(playList, playIndex)} // 플레이어 끝났을 때 이벤트
                     />
-                    {/* <source id="video1" src="/video/birthday.mp4" type="video/mp4" />
-                        <source id="video2" src="/video/painting.mp4" type="video/mp4" /> */}
                     <div className="slider-container">
                         <ul className="slider2 slider-birthday">
+                            <div className="five-items">
+                                <li>
+                                    <img className="slider-image" src={film1} alt="Film1" />
+                                </li>
+                                <li>
+                                    <img className="slider-image" src={film2} alt="Film2" />
+                                </li>
+                                <li>
+                                    <img className="slider-image" src={film3} alt="Film3" />
+                                </li>
+                                <li>
+                                    <img className="slider-image" src={film4} alt="Film4" />
+                                </li>
+                                <li>
+                                    <img className="slider-image" src={film5} alt="Film5" />
+                                </li>
+                            </div>
+                            <div className="five-items">
+                                <li>
+                                    <img className="slider-image" src={film6} alt="Film6" />
+                                </li>
+                                <li>
+                                    <img className="slider-image" src={film7} alt="Film7" />
+                                </li>
+                                <li>
+                                    <img className="slider-image" src={film8} alt="Film8" />
+                                </li>
+                                <li>
+                                    <img className="slider-image" src={film9} alt="Film9" />
+                                </li>
+                                <li>
+                                    <img className="slider-image" src={film10} alt="Film10" />
+                                </li>
+                            </div>
                             <div className="five-items">
                                 <li>
                                     <img className="slider-image" src={film1} alt="Film1" />
