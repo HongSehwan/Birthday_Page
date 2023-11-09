@@ -4,9 +4,10 @@ import Nav from "./components/nav";
 import Musicbox from "./components/musicbox";
 import Gift from "./components/gift";
 import Main from "./pages/main";
-import Letter from "./pages/letter";
 import Row from "react-bootstrap/Row";
 import whiteIMG from "./assets/images/white_background.jpeg";
+import HONGLetter from "./assets/letter/HONG_letter.jpeg";
+import HONGLetterCover from "./assets/letter/HONG_letter_cover.jpeg";
 import JJOOLetter from "./assets/letter/JJOO_letter.jpeg";
 import JJOOLetterCover from "./assets/letter/JJOO_letter_cover.jpeg";
 import styled from "styled-components";
@@ -48,30 +49,30 @@ const AppRouter = () => {
         }
     `;
 
-    const LetterCoverImg = styled.img`
+    const HongLetterCoverImg = styled.img`
         position: absolute;
         top: 100px;
-        left: 50px;
-        width: 150px;
-        height: 150px;
+        left: 80px;
+        width: 200px;
+        height: 200px;
         opacity: ${lightOpacity}%;
         z-index: ${letterIndex};
-        transform: rotate(-40deg);
+        transform: rotate(-30deg);
         @media screen and (max-width: 1024px) {
             display: none;
         }
         @media screen and (min-width: 1500px) {
             top: 130px;
-            left: 80px;
-            width: 220px;
-            height: 220px;
+            left: 110px;
+            width: 260px;
+            height: 260px;
         }
     `;
 
-    const LetterImg = styled.img`
+    const HongLetterImg = styled.img`
         position: absolute;
         top: 100px;
-        left: 250px;
+        left: 280px;
         width: 350px;
         height: 500px;
         opacity: ${lightOpacity}%;
@@ -80,10 +81,49 @@ const AppRouter = () => {
             display: none;
         }
         @media screen and (min-width: 1500px) {
-            top: 150px;
-            left: 400px;
-            width: 470px;
-            height: 650px;
+            top: 130px;
+            left: 380px;
+            width: 510px;
+            height: 700px;
+        }
+    `;
+
+    const JJooLetterCoverImg = styled.img`
+        position: absolute;
+        top: 100px;
+        left: 1150px;
+        width: 200px;
+        height: 200px;
+        opacity: ${lightOpacity}%;
+        z-index: ${letterIndex};
+        transform: rotate(30deg);
+        @media screen and (max-width: 1024px) {
+            display: none;
+        }
+        @media screen and (min-width: 1500px) {
+            top: 130px;
+            left: 1530px;
+            width: 260px;
+            height: 260px;
+        }
+    `;
+
+    const JJooLetterImg = styled.img`
+        position: absolute;
+        top: 100px;
+        left: 800px;
+        width: 350px;
+        height: 500px;
+        opacity: ${lightOpacity}%;
+        z-index: ${letterIndex};
+        @media screen and (max-width: 1024px) {
+            display: none;
+        }
+        @media screen and (min-width: 1500px) {
+            top: 130px;
+            left: 1020px;
+            width: 510px;
+            height: 700px;
         }
     `;
 
@@ -93,14 +133,13 @@ const AppRouter = () => {
                 <div className="main-page no-scroll">
                     <Row className="route-container no-scroll">
                         <LightImg src={whiteIMG} alt="Background" />
-                        <LetterCoverImg src={JJOOLetterCover} alt="Cover" />
-                        <LetterImg src={JJOOLetter} alt="Letter" />
-                        <LetterCoverImg src={JJOOLetterCover} alt="Cover" />
-                        <LetterImg src={JJOOLetter} alt="Letter" />
+                        <HongLetterCoverImg src={HONGLetterCover} alt="Cover" />
+                        <HongLetterImg src={HONGLetter} alt="Letter" />
+                        <JJooLetterCoverImg src={JJOOLetterCover} alt="Cover" />
+                        <JJooLetterImg src={JJOOLetter} alt="Letter" />
                         <Nav />
                         <Routes>
                             <Route path="/main/*" element={<Main />} />
-                            <Route path="/letter/*" element={<Letter />} />
                             <Route path="/" element={<Navigate replace to="/main" />} />
                         </Routes>
                         <div className="sideArea">

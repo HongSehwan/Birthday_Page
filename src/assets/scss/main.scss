@@ -355,7 +355,31 @@ main {
     //   }
   }
 
-  
+  @media screen and (min-height:875px) {
+        @media screen and (max-height:880px) {
+        .sideArea {
+            .music-container {
+                .music-box {
+                    height: 70vh;
+                    background-size: 410px;
+
+                    .pendingTrack {
+                        margin-top: 20px;
+                        margin-left: 15px;
+                        height: 33px;
+                    }
+
+                    .audio-container {
+                        max-height: 105px;
+                        audio {
+                            margin-top: 270px;
+                        }
+                    }
+                }
+            }
+        }
+    }   
+}
 
   @media screen and (max-width:1024px) {
     main {
@@ -505,6 +529,45 @@ main {
                     max-height: 105px;
                     audio {
                         margin-top: 235px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-height:1000px) {
+        .sideArea {
+            .music-container {
+                .music-box {
+                    height: 70vh;
+                    background-size: 490px;
+                    .listName {
+                        height: 425px;
+                    }
+
+                    .pendingTrack {
+                        margin-top: 25.5px;
+                        margin-left: 15px;
+                        height: 40px;
+            
+                        .playList {
+                            font-size: 21px;
+                            font-weight: 550;
+                            margin-left: 20px;
+                        }
+        
+                    }
+            
+                    .marquee {
+                        font-size: 21px;
+                        font-weight: 550;
+                    }
+
+                    .audio-container {
+                        max-height: 105px;
+                        audio {
+                            margin-top: 226px;
+                        }
                     }
                 }
             }
